@@ -65,8 +65,7 @@ nmax(N,S):-  N>1 , read(X),N1 is N-1 , nmax(N1,S1),S is max(S1,X).
    - Sort
       ```PROLOG
        separer([],[],[]).
-       separer([X|L],L1,[X|L2]):-  longeur(L,S),I is S+1, I>0,pair(S),
-       separer(L,L1,L2).
+       separer([X|L],L1,[X|L2]):-  longeur(L,S),I is S+1, I>0,pair(S),separer(L,L1,L2).
        separer([X|L],[X|L1],L2):- longeur(L,S),I is S+1, pair(I),separer(L,L1,L2).
 
       fusionner([],L,L):- !.
